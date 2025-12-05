@@ -20,7 +20,7 @@ async function fetchOutfit() {
     hideError();
 
     try {
-        const res = await fetch(`/api/outfit?city=${encodeURIComponent(city)}`);
+        fetch("http://localhost:5000/api/outfit?city=" + encodeURIComponent(city));
         const data = await res.json();
 
         if (data.error) throw new Error(data.error);
