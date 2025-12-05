@@ -11,6 +11,11 @@ const temperature = document.getElementById("temperature");
 const loading = document.getElementById("loading");
 
 btn.addEventListener("click", fetchOutfit);
+input.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        fetchOutfit();
+    }
+});
 
 async function fetchOutfit() {
     console.log("Button clicked!");
