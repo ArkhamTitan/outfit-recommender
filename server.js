@@ -8,7 +8,7 @@ const { getOutfit } = require("./outfitModel");
 const app = express();
 app.use(cors());
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 app.get("/api/outfit", async (req, res) => {
     const city = req.query.city;
