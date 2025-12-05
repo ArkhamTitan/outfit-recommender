@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>??? – Outfit Recommender</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<header>
+    <h1>???</h1>
+    <p class="subtitle">Outfit recommendations based on the current weather!</p>
+</header>
+
+<main>
+    <!-- Search Section -->
+    <section id="searchSection">
+        <input
+                type="text"
+                id="locationInput"
+                placeholder="Enter a location (e.g., New York)"
+        />
+        <button id="searchBtn">Get An Outfit</button>
+        <p id="errorMsg" class="hidden"></p>
+    </section>
+
+    <!-- Weather Panel -->
+    <section id="weatherPanel" class="card hidden">
+        <div id="weatherHeader">
+            <img id="weatherIcon" alt="" />
+            <div>
+                <h2 id="cityName"></h2>
+                <p id="weatherDesc"></p>
+            </div>
+        </div>
+        <div id="tempBlock">
+            <span id="temperature"></span>
+        </div>
+    </section>
+
+    <!-- Outfit Results -->
+    <section id="outfitResults" class="hidden">
+        <h3>Your Outfit Options</h3>
+        <div id="outfitGrid"></div>
+    </section>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="hidden">
+        <div class="spinner"></div>
+    </div>
+</main>
+
+<footer>
+    <p>© 2025 WeatherFit | Designed for CS Project</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

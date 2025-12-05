@@ -1,0 +1,184 @@
+:root {
+    --cold: #4f7cac;
+    --warm: #ff9966;
+    --hot: #ff5e62;
+    --neutral: #8ea8c3;
+
+    --dark-text: #1a1a1a;
+    --light-text: #ffffff;
+
+    --radius: 12px;
+    --shadow: 0px 4px 14px rgba(0,0,0,0.15);
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    background: linear-gradient(#bcd0e7, #8ea8c3);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--dark-text);
+}
+
+/* Dynamic weather themes */
+body.cold    { background: linear-gradient(#4f7cac, #09203f); color: white; }
+body.warm    { background: linear-gradient(#ffad66, #ff7b54); color: white; }
+body.hot     { background: linear-gradient(#ff5e62, #ff9966); color: white; }
+
+/* ---------- HEADER ---------- */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    margin-top: .5rem;
+    opacity: 0.85;
+}
+
+/* ---------- MAIN ---------- */
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Search Section */
+#searchSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8rem;
+    margin-bottom: 2rem;
+}
+
+#locationInput {
+    width: 100%;
+    max-width: 400px;
+    padding: .75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: var(--radius);
+}
+
+#searchBtn {
+    padding: .6rem 1.3rem;
+    font-size: 1rem;
+    border: none;
+    background: #1a73e8;
+    color: white;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#searchBtn:hover {
+    background: #155bb8;
+}
+
+#errorMsg {
+    color: #ffdddd;
+    background: rgba(255, 0, 0, 0.4);
+    padding: .5rem 1rem;
+    border-radius: var(--radius);
+}
+
+/* ---------- CARDS ---------- */
+.card {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+/* Weather panel */
+#weatherHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#weatherIcon {
+    width: 64px;
+    height: 64px;
+}
+
+#tempBlock {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+}
+
+/* Outfit Grid */
+#outfitResults h3 {
+    margin-bottom: 1rem;
+}
+
+#outfitGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.outfitCard {
+    background: white;
+    color: black;
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    animation: fade 0.4s ease-in-out;
+}
+
+.outfitCard img {
+    width: 100%;
+    border-radius: var(--radius);
+}
+
+.outfitCard h4 {
+    margin: .5rem 0 .2rem;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Loading Spinner */
+#loading {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* Hidden class */
+.hidden { display: none; }
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 1rem;
+    opacity: 0.8;
+}
