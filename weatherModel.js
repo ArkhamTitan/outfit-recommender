@@ -24,8 +24,8 @@ async function getWeather(city, apiKey) {
     // returns the temp in F, and the weather in lowercase
     return {
         temp: data.main.temp,
-        tempLow: data.main.temp_min,
-        tempHigh: data.main.temp_max,
+        tempLow:  temp_min,
+        tempHigh: temp_max,
         condition: data.weather[0].main.toLowerCase()
     };
 }
