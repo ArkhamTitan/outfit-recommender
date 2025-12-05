@@ -93,6 +93,4 @@ function hideError() {
     errorMsg.classList.add("hidden");
 }
 
-function showLoading(show) {
-    loading.classList.toggle("hidden", !show);
 }
