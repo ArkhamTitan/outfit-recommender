@@ -20,7 +20,7 @@ async function fetchOutfit() {
     hideError();
 
     try {
-        fetch("http://localhost:4000/api/outfit?city=" + encodeURIComponent(city));
+        const res = await fetch(`https://csci331vm.cs.montana.edu:5000/api/outfit?city=${encodeURIComponent(city)}`);
         const data = await res.json();
 
         if (data.error) throw new Error(data.error);
