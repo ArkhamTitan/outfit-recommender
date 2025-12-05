@@ -20,7 +20,7 @@ async function getWeather(city, apiKey) {
     
     let temp_max = data.main.temp;
     let temp_min = data.main.temp;
-
+    
     try {
         const forecastResponse = await fetch(forecastUrl);
         if (forecastResponse.ok) {
@@ -38,11 +38,11 @@ async function getWeather(city, apiKey) {
         console.log("Forecast fetch failed, using current temp");
     }
 
-    // returns the temp in F, and the weather in lowercase
+    // returns the temp in F, high/low estimates, and the weather in lowercase
     return {
         temp: data.main.temp,
-        tempLow:  temp_min,
-        tempHigh: temp_max,
+        temp_max: temp_max,
+        temp_min: temp_min,
         condition: data.weather[0].main.toLowerCase()
     };
 }
