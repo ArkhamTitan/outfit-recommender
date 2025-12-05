@@ -13,6 +13,7 @@ const loading = document.getElementById("loading");
 btn.addEventListener("click", fetchOutfit);
 
 async function fetchOutfit() {
+    console.log("Button clicked!");
     const city = input.value.trim();
     if (!city) return showError("Please enter a city.");
 
