@@ -17,7 +17,6 @@ async function fetchOutfit() {
     const city = input.value.trim();
     if (!city) return showError("Please enter a city.");
 
-    showLoading(true);
     hideError();
 
     try {
@@ -33,8 +32,6 @@ async function fetchOutfit() {
     } catch (e) {
         showError(e.message);
     }
-
-    showLoading(false);
 }
 
 function updateWeatherUI(data) {
