@@ -13,6 +13,13 @@ async function getWeather(city, apiKey) {
 
     const data = await response.json();
 
+    // DEBUG: Log the entire response
+    console.log("Full API Response:", JSON.stringify(data, null, 2));
+    console.log("data.main:", data.main);
+    console.log("temp:", data.main.temp);
+    console.log("temp_max:", data.main.temp_max);
+    console.log("temp_min:", data.main.temp_min);
+
     // returns the temp in F, high/low estimates, and the weather in lowercase
     return {
         temp: data.main.temp,
