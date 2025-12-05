@@ -2,7 +2,9 @@ const fetch = require("node-fetch");
 
 // Fetches current weather data for a given city using OpenWeatherMap
 async function getWeather(city, apiKey) {
-    const url = 'https://api.openweathermap.org/data/2.5/weather?q=${encodeURICompnent(city)}&units=imperial&appid=${apiKey}';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
+        city
+    )}&units=imperial&appid=${apiKey}`;
     const response = await fetch(url);
 
     if (!response.ok) {
