@@ -108,7 +108,7 @@ main {
 }
 
 #weatherIcon {
-    font-size: 20rem;
+    font-size: 10rem;
     display: inline-block;
     width: auto;
     height: auto;
@@ -191,5 +191,6 @@ footer {
     opacity: 0.8;
 
 }
+
 
 
